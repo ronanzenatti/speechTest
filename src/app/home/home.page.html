@@ -1,14 +1,28 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar [color]="isRecording ? 'danger' : 'primary'">
     <ion-title>
-      Ionic Blank
+      Talk to Me
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-button expand="full" (click)="getPermission()">
+    Get Permissions
+  </ion-button>
+  <ion-button expand="full" (click)="startListening()">
+    Start
+  </ion-button>
+  <ion-button expand="full" *ngIf="isIos()" (click)="stopListening()">
+    Stop
+  </ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      Entendi isso...
+    </ion-card-header>
+    <ion-item *ngFor="let match of matchs">
+      {{match}}
+    </ion-item>
+  </ion-card>
 </ion-content>

@@ -1,5 +1,7 @@
 {
   "name": "speechTest",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
