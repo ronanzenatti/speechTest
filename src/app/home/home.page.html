@@ -23,6 +23,9 @@
     </ion-card-header>
     <ion-item *ngFor="let match of matchs">
       {{match}}
+      <ion-button (click)="speakText(match)">
+        <ion-icon slot="icon-only" name="musical-note"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-card>
 </ion-content>
